@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {   
     float yPos;
+    [SerializeField] GameObject playerShip;
     [SerializeField] GameObject laser;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,5 +22,16 @@ public class Player : MonoBehaviour
        }
        
 
+    }
+    void OnDestroy()
+    {   
+        
+        if(GameManager.instance.hp <= 0){
+            GameManager.instance.GameOver();
+        } else {
+            GameManager.instance.minusHP();
+            Instantiate(playerShip);
+        }
+        
     }
 }
