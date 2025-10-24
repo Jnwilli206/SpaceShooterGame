@@ -11,13 +11,15 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        SetUpMoveBoundaries();
+        
     }
 
     void Update()
     {
+        SetUpMoveBoundaries();
         MovePlayer();  
-        Shoot();       
+        Shoot();     
+        checkHP();
     }
 
     void MovePlayer()
@@ -32,6 +34,14 @@ public class Player : MonoBehaviour
         float clampedY = Mathf.Clamp(transform.position.y, yMin, yMax);
         transform.position = new Vector3(clampedX, clampedY, 0);
     }
+
+    void checkHP()
+    {
+        if (GameManager.instance.hp <= 0){
+            Destroy(gameObject);
+        }
+    }
+
 
     void Shoot()
     {
@@ -56,14 +66,7 @@ public class Player : MonoBehaviour
 
     void OnDestroy()
     {
-        if (GameManager.instance.hp <= 0)
-        {
-            GameManager.instance.GameOver();
-        }
-        else
-        {
-            GameManager.instance.minusHP();
-            Instantiate(playerShip);
-        }
+        GameManager.instance.GameOver();
+    
     }
 }

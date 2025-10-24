@@ -23,9 +23,20 @@ public class Enemy : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {   
-        GameManager.instance.IncreaseScore(10);
-        Destroy(gameObject); //destroys this enemy object
-        Destroy(collision.gameObject); //destroys what hit it ie:laser
+        
+        if (!collision.gameObject.CompareTag("Player"))
+        {
+            GameManager.instance.IncreaseScore(10);
+            // Destroy the other object
+            Destroy(collision.gameObject);
+
+            // Destroy itself
+            Destroy(gameObject);
+        } else if (collision.gameObject.CompareTag("Player")){
+            GameManager.instance.minusHP();
+        }
+        
     }
+     
 }
 
