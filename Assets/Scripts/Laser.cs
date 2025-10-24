@@ -15,4 +15,8 @@ public class Laser : MonoBehaviour
     {
         transform.position += new Vector3(0, laserSpeed, 0) * Time.deltaTime;
     }
+
+    void OnBecameInvisible(){
+        Destroy(gameObject);
+    }
 }

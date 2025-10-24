@@ -14,8 +14,13 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         transform.position -= new Vector3(0, speed, 0) * Time.deltaTime;
+        
     }
-
+    
+    void OnBecameInvisible(){
+        Destroy(gameObject);
+    }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {   
         GameManager.instance.IncreaseScore(10);
