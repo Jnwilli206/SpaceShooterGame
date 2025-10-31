@@ -11,10 +11,8 @@ public class Spawner : MonoBehaviour
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
-    {   //These are taking the x values from the far left of the camera, far right of the camera, and the y a little above the camera.
-        xMin = Camera.main.ViewportToWorldPoint(new Vector3(.1f,0,0)).x; //The numbers in Vector3 might be percentage based
-        xMax = Camera.main.ViewportToWorldPoint(new Vector3(.9f,0,0)).x; //Like .9 here the tutorial said means 90%
-        ySpawn = Camera.main.ViewportToWorldPoint(new Vector3(0,1.25f,0)).y; //1.25 prob means 125%
+    {   
+        
 
         InvokeRepeating("SpawnEnemy", 3f, spawnRate); //(methodname, delay in seconds, interval time)
     }
@@ -22,7 +20,10 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //These are taking the x values from the far left of the camera, far right of the camera, and the y a little above the camera.
+        xMin = Camera.main.ViewportToWorldPoint(new Vector3(.1f,0,0)).x; //The numbers in Vector3 might be percentage based
+        xMax = Camera.main.ViewportToWorldPoint(new Vector3(.9f,0,0)).x; //Like .9 here the tutorial said means 90%
+        ySpawn = Camera.main.ViewportToWorldPoint(new Vector3(0,1.25f,0)).y; //1.25 prob means 125%
     }
 
     //Spawns an enemy above the screen, at a randX between xMin and xMax with the rotation of the sprite (Thats what quaternion is)
