@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2826138326843440944}
   - component: {fileID: 7910821327969599022}
   - component: {fileID: 2031567589818459769}
+  - component: {fileID: 2059379416641259624}
   m_Layer: 0
   m_Name: PlayerShip
   m_TagString: Player
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.03878939, y: -4.316759, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.449753, y: 2.449753, z: 2.449753}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 2049292763
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6540657719654231131, guid: 9d179910dd5ab2b4d9153746fb4fbe71, type: 3}
+  m_Sprite: {fileID: -2771666826755579022, guid: 4805e9afb940ce94c989dc49fe1f7c75, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -138,5 +139,17 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.079731345}
-  m_Radius: 0.4802686
+  m_Offset: {x: -0.0037233396, y: -0.020338874}
+  m_Radius: 0.24880458
+--- !u!114 &2059379416641259624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210775125161873004}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62cbfdf37e3852b4db91dc8afb0433a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
