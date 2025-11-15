@@ -33,6 +33,11 @@ public class GameManager : MonoBehaviour
     {
         score += amount;
         scoreText.text = "Score: " + score.ToString();
+
+        if (score == 50)
+        {
+            UpgradeManager.instance.ShowUpgradeMenu();
+        }
     }
 
      public void GameOver()
@@ -43,6 +48,10 @@ public class GameManager : MonoBehaviour
     public void minusHP()
     {
         hp -= 1;
+        hpDisplay.text = "HP: " + hp.ToString();
+    }
+    public void UpdateHPUI()
+    {
         hpDisplay.text = "HP: " + hp.ToString();
     }
 }   
