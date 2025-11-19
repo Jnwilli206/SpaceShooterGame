@@ -38,7 +38,7 @@ public class UpgradeManager : MonoBehaviour
 
     void ChooseFireRateUpgrade()
     {
-        Player player = FindObjectOfType<Player>();
+        Player player = FindFirstObjectByType<Player>();
         if (player != null)
         {
             player.UpgradeFireRate();

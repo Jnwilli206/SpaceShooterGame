@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Screen : MonoBehaviour
 {
-    [SerializeField] float screenSpeed = 1.0f;
+    public static float screenSpeed = 1.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

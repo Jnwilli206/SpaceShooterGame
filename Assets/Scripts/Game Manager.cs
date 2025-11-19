@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         gameOverText.enabled = false;
+        UpdateHPUI();
     }
 
     // Update is called once per frame
@@ -48,7 +49,7 @@ public class GameManager : MonoBehaviour
     public void minusHP()
     {
         hp -= 1;
-        hpDisplay.text = "HP: " + hp.ToString();
+        UpdateHPUI();
     }
     public void UpdateHPUI()
     {
