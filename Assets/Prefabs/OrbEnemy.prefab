@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: -4638949009864870473}
   - component: {fileID: 7608776857392106356}
   - component: {fileID: 3289616457624215709}
+  - component: {fileID: 7961940849648725657}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: OrbEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 2049292763
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8375389023160753438, guid: ab2d8f48f093e3b438f6a12c7a4fb57b, type: 3}
+  m_Sprite: {fileID: -7207154463065810178, guid: 50ca20d929a85f84e871ed20eb33818a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,9 +103,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57cf92a945176f5409f8ff54f3b3c908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 2
   manager: {fileID: 0}
-  enemyHealth: 1
+  enemyHealth: 4
 --- !u!58 &7608776857392106356
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -139,8 +140,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.014685321}
-  m_Radius: 0.2902435
+  m_Offset: {x: 0, y: -0.0021369697}
+  m_Radius: 0.1632808
 --- !u!50 &3289616457624215709
 Rigidbody2D:
   serializedVersion: 5
@@ -168,3 +169,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7961940849648725657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449586391032257797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9144a67353f869a458a4ec7670e08d10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+  sprites:
+  - {fileID: 1630608526045341273, guid: 50ca20d929a85f84e871ed20eb33818a, type: 3}
+  - {fileID: -1229338882982607770, guid: 50ca20d929a85f84e871ed20eb33818a, type: 3}
+  - {fileID: 4163331461880927571, guid: 50ca20d929a85f84e871ed20eb33818a, type: 3}
+  - {fileID: -1339322322683228967, guid: 50ca20d929a85f84e871ed20eb33818a, type: 3}
+  - {fileID: -4340858973973808876, guid: 50ca20d929a85f84e871ed20eb33818a, type: 3}
+  - {fileID: 4163331461880927571, guid: 50ca20d929a85f84e871ed20eb33818a, type: 3}
+  - {fileID: -1229338882982607770, guid: 50ca20d929a85f84e871ed20eb33818a, type: 3}
+  - {fileID: 1630608526045341273, guid: 50ca20d929a85f84e871ed20eb33818a, type: 3}
+  seconds: 0.5

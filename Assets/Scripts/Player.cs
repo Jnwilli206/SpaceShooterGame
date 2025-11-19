@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         fireSizeUp = false;
+        laser.transform.localScale = new Vector3(1, 1, 1);
     }
 
     void Update()

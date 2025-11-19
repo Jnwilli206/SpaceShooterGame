@@ -1546,7 +1546,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 2
-  enemyPrefab: {fileID: 8449586391032257797, guid: 6b6c7ef0163c2d649aeff521a53d2e73, type: 3}
+  Enemies:
+  - {fileID: 8449586391032257797, guid: 6b6c7ef0163c2d649aeff521a53d2e73, type: 3}
+  - {fileID: 8449586391032257797, guid: 23d6c45ea43e6304e980dab884eefa14, type: 3}
 --- !u!4 &1040082765
 Transform:
   m_ObjectHideFlags: 0

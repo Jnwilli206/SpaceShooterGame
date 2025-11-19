@@ -3,11 +3,12 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {   
     [SerializeField] float spawnRate = 2f;
-    [SerializeField] GameObject enemyPrefab;
+    [SerializeField] GameObject[] Enemies;
 
     float xMin;
     float xMax;
     float ySpawn;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,7 +31,9 @@ public class Spawner : MonoBehaviour
     
     void SpawnEnemy()
     {
+        
         float randX = Random.Range(xMin, xMax);
-        Instantiate(enemyPrefab, new Vector3(randX, ySpawn, 0), Quaternion.identity);  
+        int randEnemy = Random.Range(0, Enemies.Length);
+        Instantiate(Enemies[randEnemy], new Vector3(randX, ySpawn, 0), Quaternion.identity);  
     }
 }
