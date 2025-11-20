@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2704576745866800200
+--- !u!1 &8449586391032257797
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8022205583896073103}
-  - component: {fileID: 9124203825718985470}
-  - component: {fileID: 6442784722955478424}
-  - component: {fileID: -6061293089255895005}
+  - component: {fileID: 3766231472562957619}
+  - component: {fileID: 725788431273159433}
+  - component: {fileID: -4638949009864870473}
+  - component: {fileID: 7608776857392106356}
+  - component: {fileID: 3289616457624215709}
+  - component: {fileID: 7961940849648725657}
   m_Layer: 0
-  m_Name: PlayerLaser
+  m_Name: OrbEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8022205583896073103
+--- !u!4 &3766231472562957619
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2704576745866800200}
+  m_GameObject: {fileID: 8449586391032257797}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.37, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &9124203825718985470
+--- !u!212 &725788431273159433
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2704576745866800200}
+  m_GameObject: {fileID: 8449586391032257797}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -78,37 +80,39 @@ SpriteRenderer:
   m_SortingLayerID: 2049292763
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3099756913309548357, guid: eca701bc63bf52b44b4879aebf9f597f, type: 3}
+  m_Sprite: {fileID: -7207154463065810178, guid: 50ca20d929a85f84e871ed20eb33818a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.13, y: 0.37}
+  m_Size: {x: 0.93, y: 0.84}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6442784722955478424
+--- !u!114 &-4638949009864870473
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2704576745866800200}
+  m_GameObject: {fileID: 8449586391032257797}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e678ad307dda3143be0398f92f415c9, type: 3}
+  m_Script: {fileID: 11500000, guid: 57cf92a945176f5409f8ff54f3b3c908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserSpeed: 15
---- !u!70 &-6061293089255895005
-CapsuleCollider2D:
+  speed: 2
+  manager: {fileID: 0}
+  enemyHealth: 4
+--- !u!58 &7608776857392106356
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2704576745866800200}
+  m_GameObject: {fileID: 8449586391032257797}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -136,6 +140,55 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.13, y: 0.37}
-  m_Direction: 0
+  m_Offset: {x: 0, y: -0.0021369697}
+  m_Radius: 0.1632808
+--- !u!50 &3289616457624215709
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449586391032257797}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &7961940849648725657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449586391032257797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9144a67353f869a458a4ec7670e08d10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+  sprites:
+  - {fileID: 1630608526045341273, guid: 50ca20d929a85f84e871ed20eb33818a, type: 3}
+  - {fileID: -1229338882982607770, guid: 50ca20d929a85f84e871ed20eb33818a, type: 3}
+  - {fileID: 4163331461880927571, guid: 50ca20d929a85f84e871ed20eb33818a, type: 3}
+  - {fileID: -1339322322683228967, guid: 50ca20d929a85f84e871ed20eb33818a, type: 3}
+  - {fileID: -4340858973973808876, guid: 50ca20d929a85f84e871ed20eb33818a, type: 3}
+  - {fileID: 4163331461880927571, guid: 50ca20d929a85f84e871ed20eb33818a, type: 3}
+  - {fileID: -1229338882982607770, guid: 50ca20d929a85f84e871ed20eb33818a, type: 3}
+  - {fileID: 1630608526045341273, guid: 50ca20d929a85f84e871ed20eb33818a, type: 3}
+  seconds: 0.5

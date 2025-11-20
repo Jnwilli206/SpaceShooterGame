@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {   
@@ -14,30 +13,32 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI gameOverText;
     public int hp;
-    [SerializeField] TextMeshProUGUI hpDisplay;
-    [SerializeField] Slider healthBar;
-    
+     [SerializeField] TextMeshProUGUI hpDisplay;
+
     private void Awake()
     {
         instance = this;
-        
     }
     void Start()
     {
         gameOverText.enabled = false;
-        
+        UpdateHPUI();
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthBar.value = hp;
+        
     }
-
     public void IncreaseScore(int amount)
     {
         score += amount;
         scoreText.text = "Score: " + score.ToString();
+
+        if (score == 50)
+        {
+            UpgradeManager.instance.ShowUpgradeMenu();
+        }
     }
 
      public void GameOver()
@@ -48,6 +49,10 @@ public class GameManager : MonoBehaviour
     public void minusHP()
     {
         hp -= 1;
+        UpdateHPUI();
+    }
+    public void UpdateHPUI()
+    {
         hpDisplay.text = "HP: " + hp.ToString();
     }
 }   

@@ -6,12 +6,17 @@ public class Player : MonoBehaviour
     [SerializeField] float moveSpeed = 8f;
     [SerializeField] GameObject playerShip;
     [SerializeField] GameObject laser;
+    [SerializeField] float fireRate = 0.3f;
+    float nextFireTime = 0f;
+    bool fireSizeUp;
+
 
     float xMin, xMax, yMin, yMax;
 
     void Start()
     {
-        
+        fireSizeUp = false;
+        laser.transform.localScale = new Vector3(1, 1, 1);
     }
 
     void Update()
@@ -45,9 +50,17 @@ public class Player : MonoBehaviour
 
     void Shoot()
     {
-        if (Input.GetButtonDown("PrimaryWeapon"))
+        if (Input.GetButton("PrimaryWeapon") && Time.time >= nextFireTime)
         {
+            nextFireTime = Time.time + fireRate;
+
+            
+
             Instantiate(laser, transform.position, Quaternion.identity);
+            if (fireSizeUp)
+            {
+                laser.transform.localScale = new Vector3(2, 2, 2);
+            }
         }
     }
 
@@ -63,6 +76,16 @@ public class Player : MonoBehaviour
         yMin = bottomLeft.y + padding;
         yMax = topRight.y - padding;
     }
+
+    public void UpgradeFireRate()
+    {
+        fireSizeUp = true;
+
+        fireRate = Mathf.Max(0.1f, fireRate - 0.05f);
+
+        Debug.Log("Fire rate upgraded! New fireRate = " + fireRate);
+    }
+
 
     void OnDestroy()
     {

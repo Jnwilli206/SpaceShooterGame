@@ -1,8 +1,10 @@
 using UnityEngine;
+
 public class Enemy : MonoBehaviour
 {
     [SerializeField] float speed = 10f;
-    
+    [SerializeField] GameManager manager;
+    [SerializeField] int enemyHealth;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,12 +27,16 @@ public class Enemy : MonoBehaviour
         
         if (!collision.gameObject.CompareTag("Player"))
         {
-            GameManager.instance.IncreaseScore(10);
+            
             // Destroy the other object
             Destroy(collision.gameObject);
-
-            // Destroy itself
-            Destroy(gameObject);
+            enemyHealth = enemyHealth - 1;
+            if (enemyHealth <= 0)
+            {
+                Destroy(gameObject);
+                GameManager.instance.IncreaseScore(10);
+            }
+                
         } else if (collision.gameObject.CompareTag("Player")){
             GameManager.instance.minusHP();
         }
