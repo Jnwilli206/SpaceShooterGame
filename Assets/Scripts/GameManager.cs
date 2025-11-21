@@ -2,18 +2,25 @@ using UnityEngine;
 using TMPro;
 
 public class GameManager : MonoBehaviour
-{   
-    
+{
+
     int score = 0;
-    
+
 
     public static GameManager instance;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    
+    [Header("UI References")]
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI gameOverText;
-    public int hp;
-     [SerializeField] TextMeshProUGUI hpDisplay;
+    [SerializeField] TextMeshProUGUI hpDisplay;
+
+
+    public int hp = 3;
+
+    [Header("Boss Settings")]           
+    public GameObject bossPrefab;       
+    public bool bossSpawned = false;
+
 
     private void Awake()
     {
@@ -25,11 +32,6 @@ public class GameManager : MonoBehaviour
         UpdateHPUI();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void IncreaseScore(int amount)
     {
         score += amount;
@@ -39,13 +41,20 @@ public class GameManager : MonoBehaviour
         {
             UpgradeManager.instance.ShowUpgradeMenu();
         }
+        if (score >= 60 && !bossSpawned)
+        {
+            Debug.Log("Boss Triggered! Score = " + score);
+            SpawnBoss();
+            bossSpawned = true;
+        }
     }
 
-     public void GameOver()
+    public void GameOver()
     {
-        gameOverText.enabled = true;
+        if (gameOverText != null)
+            gameOverText.enabled = true;
     }
-    
+
     public void minusHP()
     {
         hp -= 1;
@@ -55,6 +64,14 @@ public class GameManager : MonoBehaviour
     {
         hpDisplay.text = "HP: " + hp.ToString();
     }
-}   
-    
- 
+
+    void SpawnBoss()
+    {
+        Vector3 spawnPos = new Vector3(0f, 7f, 0f);          
+
+        Debug.Log("Spawning Boss at: " + spawnPos);          
+        Instantiate(bossPrefab, spawnPos, Quaternion.identity);
+    }
+}
+
+
