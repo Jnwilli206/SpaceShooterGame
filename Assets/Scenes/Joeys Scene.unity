@@ -188,7 +188,7 @@ SpriteRenderer:
   m_Size: {x: 2.56, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &51087571
@@ -461,7 +461,7 @@ SpriteRenderer:
   m_Size: {x: 2.56, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &472024894
@@ -901,7 +901,7 @@ SpriteRenderer:
   m_Size: {x: 2.56, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &836374569
@@ -1364,7 +1364,7 @@ SpriteRenderer:
   m_Size: {x: 2.56, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1008402905
@@ -1551,6 +1551,7 @@ MonoBehaviour:
   Enemies:
   - {fileID: 8449586391032257797, guid: 6b6c7ef0163c2d649aeff521a53d2e73, type: 3}
   - {fileID: 8449586391032257797, guid: 23d6c45ea43e6304e980dab884eefa14, type: 3}
+  - {fileID: 732693988984964162, guid: f53fa68d523d68849861ddbab5db54e0, type: 3}
 --- !u!4 &1040082765
 Transform:
   m_ObjectHideFlags: 0
@@ -1635,7 +1636,7 @@ SpriteRenderer:
   m_Size: {x: 2.56, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1306295223
@@ -1722,7 +1723,7 @@ SpriteRenderer:
   m_Size: {x: 2.56, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1510891365
@@ -1971,15 +1972,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 76ca065540a78244daa2eb87e2dfdbc2, type: 2}
     - target: {fileID: 7594369488213802799, guid: c75fa0d9dd8bb7845b18e0f62b190af8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 9.652618
+      value: 10.590992
       objectReference: {fileID: 0}
     - target: {fileID: 7594369488213802799, guid: c75fa0d9dd8bb7845b18e0f62b190af8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 8.522225
+      value: 9.350708
       objectReference: {fileID: 0}
     - target: {fileID: 7594369488213802799, guid: c75fa0d9dd8bb7845b18e0f62b190af8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.0972145
       objectReference: {fileID: 0}
     - target: {fileID: 7594369488213802799, guid: c75fa0d9dd8bb7845b18e0f62b190af8, type: 3}
       propertyPath: m_LocalPosition.x
