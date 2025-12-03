@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20d3358e9ef343e46956e42bf1ef8c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
+  moveSpeed: 10
   playerShip: {fileID: 210775125161873004}
   laser: {fileID: 2704576745866800200, guid: 4d42c4962cf8ce7489414afb5cd5414c, type: 3}
   fireRate: 0.3

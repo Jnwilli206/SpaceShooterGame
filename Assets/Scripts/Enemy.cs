@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -19,6 +20,10 @@ public class Enemy : MonoBehaviour
     }
     
     void OnBecameInvisible(){
+        
+        
+        
+        
         Destroy(gameObject);
     }
     
@@ -27,9 +32,12 @@ public class Enemy : MonoBehaviour
         
         if (!collision.gameObject.CompareTag("Player"))
         {
+
             
-            // Destroy the other object
-            Destroy(collision.gameObject);
+            if (!collision.gameObject.CompareTag("Boss"))
+            {   // Destroy the other object if its not the boss or player
+                Destroy(collision.gameObject);
+            }
             enemyHealth = enemyHealth - 1;
             if (enemyHealth <= 0)
             {
