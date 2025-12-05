@@ -46,11 +46,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 749f5458a2b3b084ca54f1f46fa49fa1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.832922
+      value: 0.65045834
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 749f5458a2b3b084ca54f1f46fa49fa1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.1610866
+      value: -2.6950197
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 749f5458a2b3b084ca54f1f46fa49fa1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -96,7 +96,7 @@ PrefabInstance:
       addedObject: {fileID: 1605905775099262088}
     - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 749f5458a2b3b084ca54f1f46fa49fa1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6005306949168300235}
+      addedObject: {fileID: -6820560293868709626}
   m_SourcePrefab: {fileID: -8435245712485981826, guid: 749f5458a2b3b084ca54f1f46fa49fa1, type: 3}
 --- !u!1 &4288815296167542549 stripped
 GameObject:
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 50
-  moveSpeed: 2
+  moveSpeed: 1
   bossBulletPrefab: {fileID: 5737406249631731388, guid: b93d13d4023b15c46832d1c6d9f7a1d5, type: 3}
   fireRate: 2
 --- !u!50 &1605905775099262088
@@ -146,7 +146,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &6005306949168300235
+--- !u!61 &-6820560293868709626
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,7 +180,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.355}
+  m_Offset: {x: 0.0055642724, y: 0.355}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: -0.014492754}
@@ -190,5 +190,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 8.12, y: 0.69}
+  m_Size: {x: 1.9935147, y: 0.69}
   m_EdgeRadius: 0

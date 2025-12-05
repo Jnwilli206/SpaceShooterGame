@@ -105,7 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   manager: {fileID: 0}
-  enemyHealth: 4
+  enemyHealth: 3
 --- !u!58 &7608776857392106356
 CircleCollider2D:
   m_ObjectHideFlags: 0
