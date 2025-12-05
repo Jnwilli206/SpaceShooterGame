@@ -30,7 +30,7 @@ public class Boss : MonoBehaviour
     {
         MovePattern();
         AttackPattern();
-        lockedY = Camera.main.ViewportToWorldPoint(new Vector3(0, 0.85f, 0)).y;
+        lockedY = Camera.main.ViewportToWorldPoint(new Vector3(0, 0.95f, 0)).y;
     }
 
     void MovePattern()
