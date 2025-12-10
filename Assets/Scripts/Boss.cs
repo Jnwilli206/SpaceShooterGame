@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour
 {
@@ -52,7 +53,7 @@ public class Boss : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         currentHP -= dmg;
-
+        Debug.Log("Yea its taking damage");
         if (currentHP <= 0)
         {
             Die();
@@ -63,6 +64,7 @@ public class Boss : MonoBehaviour
     {
         Debug.Log("Boss Defeated!");
         Destroy(gameObject);
+        SceneManager.LoadScene(0);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
