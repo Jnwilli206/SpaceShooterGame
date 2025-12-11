@@ -63,8 +63,9 @@ public class Boss : MonoBehaviour
     void Die()
     {
         Debug.Log("Boss Defeated!");
+        GameManager.instance.GameOver();
         Destroy(gameObject);
-        SceneManager.LoadScene(0);
+       // SceneManager.LoadScene(0);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

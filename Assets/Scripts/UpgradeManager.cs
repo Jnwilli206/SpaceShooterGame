@@ -9,6 +9,8 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] GameObject upgradePanel;
     [SerializeField] Button healthButton;
     [SerializeField] Button fireRateButton;
+    [SerializeField] Button extraGunButton;
+
 
     private bool upgradeChosen = false;
 
@@ -28,6 +30,22 @@ public class UpgradeManager : MonoBehaviour
             Time.timeScale = 0f; 
         }
     }
+    public void UnlockExtraGun()
+    {
+        Player player = FindFirstObjectByType<Player>();
+        if (player != null)
+        {
+            player.extraGunUnlocked = true;
+
+            // activate side firepoints
+            foreach (Transform fp in player.firePoints)
+            {
+                fp.gameObject.SetActive(true);
+            }
+        }
+        CloseMenu();
+    }
+
 
     void ChooseHealthUpgrade()
     {
