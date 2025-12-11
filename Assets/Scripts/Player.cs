@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
     [SerializeField] float fireRate = 0.3f;
     float nextFireTime = 0f;
     bool fireSizeUp;
+    public Transform[] firePoints;   // all gun positions
+    public bool extraGunUnlocked = false;
+
 
 
     float xMin, xMax, yMin, yMax;
@@ -43,9 +46,12 @@ public class Player : MonoBehaviour
     void checkHP()
     {
         if (GameManager.instance.hp <= 0){
+            GameManager.instance.GameOver();
             Destroy(gameObject);
         }
+
     }
+
 
 
     void Shoot()
@@ -54,15 +60,33 @@ public class Player : MonoBehaviour
         {
             nextFireTime = Time.time + fireRate;
 
-            
+            // Shoot from center gun ALWAYS
+            FireFromPoint(transform);
 
-            Instantiate(laser, transform.position, Quaternion.identity);
-            if (fireSizeUp)
+            // If upgrade unlocked, shoot from extra weapons
+            if (extraGunUnlocked && firePoints != null)
             {
-                laser.transform.localScale = new Vector3(2, 2, 2);
+                foreach (Transform fp in firePoints)
+                {
+                    if (fp != null && fp.gameObject.activeSelf)
+                    {
+                        FireFromPoint(fp);
+                    }
+                }
             }
         }
     }
+
+    void FireFromPoint(Transform shootPoint)
+    {
+        GameObject newLaser = Instantiate(laser, shootPoint.position, shootPoint.rotation);
+
+        if (fireSizeUp)
+        {
+            newLaser.transform.localScale = new Vector3(2, 2, 2);
+        }
+    }
+
 
     void SetUpMoveBoundaries()
     {
@@ -93,3 +117,4 @@ public class Player : MonoBehaviour
     
     }
 }
+

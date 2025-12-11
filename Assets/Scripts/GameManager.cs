@@ -1,5 +1,7 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -51,9 +53,9 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        if (gameOverText != null)
-            gameOverText.enabled = true;
+        SceneManager.LoadScene("End Screen");
     }
+
 
     public void minusHP()
     {
