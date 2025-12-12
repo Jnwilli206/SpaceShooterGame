@@ -39,11 +39,11 @@ public class GameManager : MonoBehaviour
         score += amount;
         scoreText.text = "Score: " + score.ToString();
 
-        if (score == 50)
+        if (score == 100)
         {
             UpgradeManager.instance.ShowUpgradeMenu();
         }
-        if (score >= 60 && !bossSpawned)
+        if (score >= 100 && !bossSpawned)
         {
             Debug.Log("Boss Triggered! Score = " + score);
             SpawnBoss();
